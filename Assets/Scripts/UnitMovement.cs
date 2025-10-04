@@ -4,6 +4,8 @@ public class UnitMovement : Movement
 {
     [SerializeField] protected Vector3 direction;
 
+    public Vector3 Direction { get { return direction; } }
+
     protected override void Init()
     {
         base.Init();
