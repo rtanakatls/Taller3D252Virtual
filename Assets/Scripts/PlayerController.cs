@@ -19,15 +19,9 @@ public class PlayerController : MonoBehaviour
         float v=Input.GetAxisRaw("Vertical");
         transform.eulerAngles += new Vector3(0, Input.GetAxis("Mouse X"), 0);
 
-
         Vector3 rotation = new Vector3(head.eulerAngles.x - Input.GetAxis("Mouse Y"), 0, 0);
-        Debug.Log(rotation.x);
         Vector3.ClampMagnitude(rotation, 90);
-
         head.localRotation=Quaternion.Euler(rotation);
-
-
-
 
         rb.linearVelocity = transform.forward * v*speed + transform.right * h*speed;
     }
